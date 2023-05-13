@@ -1,0 +1,19 @@
+Pointers can be useful in certain situations, but whether they are "good" or not depends on the context of your code and how you use them.
+
+Here are some situations where using pointers can be helpful:
+
+Memory management: Pointers can be used to dynamically allocate memory for data structures, such as arrays and linked lists, which can be useful when you need to manage memory manually.
+
+Performance: Pointers can be more efficient than copying large data structures, such as arrays or structs, as function parameters. By passing pointers instead of values, you avoid copying the entire data structure and just pass a reference to it.
+
+Large data structures: If you have a large data structure, like a big string or a complex struct, passing it as a pointer instead of copying it can save memory and CPU cycles.
+
+However, there are also some situations where using pointers can make code more complex and harder to reason about. For example:
+
+Aliasing: When multiple pointers point to the same memory address, modifying one pointer can unintentionally modify the data pointed to by another pointer, which can cause bugs that are hard to diagnose.
+
+Null pointer dereference: If you dereference a null pointer, your program will crash with a runtime error. Therefore, you need to be careful to always initialize your pointers to a valid memory address before dereferencing them.
+
+Memory leaks: If you allocate memory with pointers and don't properly deallocate it when you're done with it, your program can leak memory and eventually run out of memory.
+
+In general, pointers can be useful tools in Go, but they require careful consideration and management to avoid the pitfalls associated with their use. It's important to understand the underlying concepts and to use pointers judiciously and appropriately for your specific use case.
