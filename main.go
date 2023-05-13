@@ -19,19 +19,29 @@ func main() {
 		fmt.Println("Error while getting current working directory" + err.Error())
 	}
 
-	path := path.Join(cwd, "files/data")
-	fmt.Println(" File path is : " + path)
+	filepath := path.Join(cwd, "files/data")
+	fmt.Println(" File filepath is : " + filepath)
 
     fmt.Println("####################### Read file using bufio and os ############################## ")
 
 	//read file
-	files.ReadFile(path)
+	files.ReadFile(filepath)
 
     fmt.Println("####################### Read file using ioutil ############################## ")
 
-    files.ReadFileUsingIoUtil(path)
+    files.ReadFileUsingIoUtil(filepath)
 
 	fmt.Println("####################### Read file using os readfile ###########################")
-	files.ReadFileUingOs(path)
+	files.ReadFileUingOs(filepath)
+	
+	fmt.Println("####################### write to file ###########################")
+	files.WriteUsingIoUtil(path.Join(cwd,"file/write_ioutil"))
+
+	fmt.Println("####################### write to file ###########################")
+	files.WriteUsingOs(path.Join(cwd,"file/write_os"))
+
+	fmt.Println("####################### write to file ###########################")
+	files.WriteUsingBuf(path.Join(cwd,"file/write_buf"))
+
 }
 
