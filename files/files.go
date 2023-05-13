@@ -7,6 +7,7 @@ import (
 	"os"
 )
 
+// ReadFile reads file using os and bufio, and print content to console. 
 func ReadFile(path string) {
 	file, err := os.Open(path)
 	if err != nil {
@@ -29,6 +30,8 @@ func ReadFile(path string) {
 	}
 }
 
+
+// ReadFileUsingIoUtil reads file usig ioutil, but this is depecrated in go now
 func ReadFileUsingIoUtil(path string) {
 	data, err := ioutil.ReadFile(path)
 
