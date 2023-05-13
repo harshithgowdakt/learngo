@@ -30,5 +30,8 @@ func main() {
     fmt.Println("####################### Read file using ioutil ############################## ")
 
     files.ReadFileUsingIoUtil(path)
+
+	fmt.Println("####################### Read file using os readfile ###########################")
+	files.ReadFileUingOs(path)
 }
 
