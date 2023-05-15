@@ -22,26 +22,25 @@ func main() {
 	filepath := path.Join(cwd, "files/data")
 	fmt.Println(" File filepath is : " + filepath)
 
-    fmt.Println("####################### Read file using bufio and os ############################## ")
+	fmt.Println("####################### Read file using bufio and os ############################## ")
 
 	//read file
 	files.ReadFile(filepath)
 
-    fmt.Println("####################### Read file using ioutil ############################## ")
+	fmt.Println("####################### Read file using ioutil ############################## ")
 
-    files.ReadFileUsingIoUtil(filepath)
+	files.ReadFileUsingIoUtil(filepath)
 
 	fmt.Println("####################### Read file using os readfile ###########################")
 	files.ReadFileUingOs(filepath)
-	
-	fmt.Println("####################### write to file ###########################")
-	files.WriteUsingIoUtil(path.Join(cwd,"file/write_ioutil"))
 
 	fmt.Println("####################### write to file ###########################")
-	files.WriteUsingOs(path.Join(cwd,"file/write_os"))
+	files.WriteUsingIoUtil(path.Join(cwd, "files/write_ioutil"))
 
 	fmt.Println("####################### write to file ###########################")
-	files.WriteUsingBuf(path.Join(cwd,"file/write_buf"))
+	files.WriteUsingOs(path.Join(cwd, "files/write_os"))
+
+	fmt.Println("####################### write to file ###########################")
+	files.WriteUsingBuf(path.Join(cwd, "files/write_buf"))
 
 }
-

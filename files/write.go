@@ -35,6 +35,7 @@ func WriteUsingBuf(path string) {
 		fmt.Println("Error while creating file : ", err)
 		return
 	}
+	defer file.Close()
 
 	writer := bufio.NewWriter(file)
 	data := "Testing writing operation using bufio"
@@ -44,6 +45,11 @@ func WriteUsingBuf(path string) {
 	if err != nil {
 		fmt.Println("Error while writing to file : ", err)
 		return
+	}
+
+	err = writer.Flush()
+	if err != nil {
+		fmt.Println("Error while flushing the data to file : ", err)
 	}
 
 	fmt.Println("Successfully wrote, number of bytes : ", n)
