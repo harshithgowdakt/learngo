@@ -34,13 +34,17 @@ func main() {
 	fmt.Println("####################### Read file using os readfile ###########################")
 	files.ReadFileUingOs(filepath)
 
-	fmt.Println("####################### write to file ###########################")
-	files.WriteUsingIoUtil(path.Join(cwd, "files/write_ioutil"))
+
+	// create folder resource if not exists
+	err = os.MkdirAll(path.Join(cwd, "resource"), os.ModeDir)
 
 	fmt.Println("####################### write to file ###########################")
-	files.WriteUsingOs(path.Join(cwd, "files/write_os"))
+	files.WriteUsingIoUtil(path.Join(cwd, "resource/write_ioutil"))
 
 	fmt.Println("####################### write to file ###########################")
-	files.WriteUsingBuf(path.Join(cwd, "files/write_buf"))
+	files.WriteUsingOs(path.Join(cwd, "resource/write_os"))
+
+	fmt.Println("####################### write to file ###########################")
+	files.WriteUsingBuf(path.Join(cwd, "resource/write_buf"))
 
 }
