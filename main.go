@@ -6,6 +6,7 @@ import (
 	"path"
 
 	"github.com/harshithgowdakt/learngo/files"
+	"github.com/harshithgowdakt/learngo/oops"
 )
 
 type Person struct {
@@ -36,7 +37,11 @@ func main() {
 
 
 	// create folder resource if not exists
-	err = os.MkdirAll(path.Join(cwd, "resource"), os.ModeDir)
+	err = os.MkdirAll(path.Join(cwd, "resource"), os.ModePerm)
+
+	if err!=nil {
+		fmt.Println("Error while creating directory : ", err.Error())
+	}
 
 	fmt.Println("####################### write to file ###########################")
 	files.WriteUsingIoUtil(path.Join(cwd, "resource/write_ioutil"))
@@ -47,4 +52,7 @@ func main() {
 	fmt.Println("####################### write to file ###########################")
 	files.WriteUsingBuf(path.Join(cwd, "resource/write_buf"))
 
+
+	fmt.Println("Running oops example")
+	oops.RunStoreExample()
 }
