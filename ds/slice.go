@@ -42,4 +42,12 @@ func RunSliceExmaples() {
 
 	fmt.Println("found number ::", found)
 	fmt.Println("filtered array ::", filtered)
+
+	lenght := len(numbers)
+	//reverse an slice
+	for i := 0; i < lenght/2; i++ {
+		numbers[i], numbers[lenght-1-i] = numbers[lenght-1-i], numbers[i]
+	}
+
+	fmt.Println("reversed slice", numbers)
 }
