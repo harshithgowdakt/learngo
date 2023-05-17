@@ -5,6 +5,7 @@ import (
 	"os"
 	"path"
 
+	"github.com/harshithgowdakt/learngo/ds"
 	"github.com/harshithgowdakt/learngo/files"
 	"github.com/harshithgowdakt/learngo/oops"
 )
@@ -55,4 +56,7 @@ func main() {
 
 	fmt.Println("Running oops example")
 	oops.RunStoreExample()
+
+	fmt.Println("running slice examples")
+	ds.RunSliceExmaples()
 }
