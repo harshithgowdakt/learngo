@@ -59,4 +59,7 @@ func main() {
 
 	fmt.Println("running slice examples")
 	ds.RunSliceExmaples()
+
+	fmt.Println("Running map example")
+	ds.RunMapExample()
 }
