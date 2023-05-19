@@ -8,6 +8,7 @@ import (
 	"github.com/harshithgowdakt/learngo/ds"
 	"github.com/harshithgowdakt/learngo/files"
 	"github.com/harshithgowdakt/learngo/oops"
+	"github.com/harshithgowdakt/learngo/threads"
 )
 
 type Person struct {
@@ -62,4 +63,7 @@ func main() {
 
 	fmt.Println("Running map example")
 	ds.RunMapExample()
+
+	fmt.Println("run go routine example")
+	threads.RunGoRoutineExample()
 }
